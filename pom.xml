@@ -22,4 +22,26 @@
     </dependencies>
 
 
+    <!-- force maven to donwload source and javadoc -->
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-dependency-plugin</artifactId>
+                <version>3.1.2</version>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>sources</goal>
+                            <goal>resolve</goal>
+                        </goals>
+                        <configuration>
+                            <classifier>javadoc</classifier>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+
 </project>
